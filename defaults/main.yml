@@ -332,7 +332,7 @@ ubuntu1804cis_set_boot_pass: false
 ubuntu1804cis_is_router: false
 
 # IPv6 required
-ubuntu1804cis_ipv6_required: true
+ubuntu1804cis_ipv6_required: false
 
 # AIDE
 ubuntu1804cis_config_aide: true
@@ -348,10 +348,10 @@ ubuntu1804cis_aide_cron:
   aide_weekday: '*'
 
 # Whether or not to run tasks related to auditing/patching the desktop environment
-ubuntu1804cis_gui: false
+ubuntu1804cis_gui: true
 
 # Set to 'true' if X Windows is needed in your environment
-ubuntu1804cis_xwindows_required: false
+ubuntu1804cis_xwindows_required: true
 
 ubuntu1804cis_openldap_clients_required: false
 ubuntu1804cis_telnet_required: false
@@ -383,9 +383,9 @@ ubuntu1804cis_host_allow:
   - "192.168.0.0/255.255.0.0"
   - "0.0.0.0/0.0.0.0"
 
-ubuntu1804cis_firewall: firewalld
+# ubuntu1804cis_firewall: firewalld
 # ubuntu1804cis_firewall: iptables
-# ubuntu1804cis_firewall: ufw
+ubuntu1804cis_firewall: ufw
 # ubuntu1804cis_firewall: nftables
 
 # 3.5.3.2 | PATCH | Ensure a table exists"
@@ -439,9 +439,9 @@ ubuntu1804cis_pwquality:
     value: '-1'
 
 ubuntu1804cis_pass:
-  max_days: 365
+  max_days: 90
   min_days: 1
-  warn_age: 7
+  warn_age: 14
   inactive: 30
   history: 5
 
@@ -497,4 +497,4 @@ chrony_config_file:
   Debian: /etc/chrony/chrony.conf
 
 ### Firewall
-ubuntu1804cis_setup_firewall: false
+ubuntu1804cis_setup_firewall: true
